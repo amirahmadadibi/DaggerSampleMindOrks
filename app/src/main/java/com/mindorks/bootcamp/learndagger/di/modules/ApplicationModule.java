@@ -9,7 +9,7 @@ import dagger.Module;
 import dagger.Provides;
 
 
-//Module is provide recepie for method to create instances
+//Module is provide recipe so called method to create instances for us
 //create dependencies
 @Module
 public class ApplicationModule {
@@ -22,14 +22,14 @@ public class ApplicationModule {
     }
 
 
-    //@Provide when we require this instances use this method and provide them for us
+    //@Provide tell's dagger when we require this instances use this method and provide them for us
 
     @Provides
     NetworkService provideNetworkService() {
         return new NetworkService(application, "key");
     }
 
-
+    @Provides
     DatabaseService provideDatabaseService() {
         return new DatabaseService(application, "databaseName.db", 1);
     }

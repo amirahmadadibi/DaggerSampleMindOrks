@@ -4,7 +4,6 @@ import android.app.Application;
 
 import com.mindorks.bootcamp.learndagger.data.local.DatabaseService;
 import com.mindorks.bootcamp.learndagger.data.remote.NetworkService;
-import com.mindorks.bootcamp.learndagger.di.DependencyComponent;
 
 import javax.inject.Inject;
 
