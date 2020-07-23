@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.mindorks.bootcamp.learndagger.data.local.DatabaseService;
 import com.mindorks.bootcamp.learndagger.data.remote.NetworkService;
+import com.mindorks.bootcamp.learndagger.di.components.ApplicationComponent;
 import com.mindorks.bootcamp.learndagger.di.components.DaggerApplicationComponent;
 import com.mindorks.bootcamp.learndagger.di.modules.ApplicationModule;
 
@@ -20,17 +21,20 @@ public class MyApplication extends Application {
     @Inject
     public DatabaseService databaseService;
 
+    public ApplicationComponent component;
+
     @Override
     public void onCreate() {
         super.onCreate();
         //we have to tell dagger when it needs to provide dependencies
         //Dagger create this class with component annotation
-        DaggerApplicationComponent
+        component = DaggerApplicationComponent
                 .builder()
                 .applicationModule(new ApplicationModule(this))//takes module object
-                .build()
-                .inject(this);//inject make dagger scan the class and provide dependencies
+                .build();
 
-        Log.d("debug", "onCreate: "+networkService.toString());
+        component.inject(this);
+
+        Log.d("debug", "onCreate: " + networkService.toString());
     }
 }
