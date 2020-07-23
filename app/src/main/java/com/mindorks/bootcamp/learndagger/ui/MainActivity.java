@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.mindorks.bootcamp.learndagger.R;
-import com.mindorks.bootcamp.learndagger.di.DependencyComponent;
-import com.mindorks.bootcamp.learndagger.di.components.DaggerApplicationActivityComponent;
 import com.mindorks.bootcamp.learndagger.di.modules.ActivityModule;
 
 import androidx.appcompat.app.AppCompatActivity;
