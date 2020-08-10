@@ -18,14 +18,20 @@ public class ActivityModule {
     }
 
 
+    //because we have added inject for the MainViewModel
+
+    //2
     //when we use dagger and provide annotation, dagger will try to create everything that method need's
     //so dagger will create databaseService and networkService object because they are input of the method
     //if we run this we get error for dagger, dagger want's to inject dependencies an cant doing taht
-    @Provides
-    MainViewModel provideMainViewModel(DatabaseService databaseService, NetworkService networkService) {
-        return new MainViewModel(databaseService, networkService);
-    }
+//    @Provides
+//    MainViewModel provideMainViewModel(DatabaseService databaseService, NetworkService networkService) {
+//        return new MainViewModel(databaseService, networkService);
+//    }
 
+
+
+    //1
     //we do not want to create dependencies by our self like this blew sample
     //we already have module to crete database and network service so in above method
     //i use that for creating dependencies
